@@ -55,6 +55,6 @@ jobs:
 - `src_repo` - source repository URL.
 - `src_user` - source user.
 - `src_token` - source token.
-- `dst_repo` - target repository URL.
-- `dst_user` - target user.
-- `dst_token` - target token.
+- `dst_repo` - destination repository URL.
+- `dst_user` - destination user.
+- `dst_token` - destination token.
