@@ -1,4 +1,4 @@
-# GitHub Action: Git Repository Mirror
+# Git Repository Mirror
 
 Universal mirroring repository tool.
 
@@ -7,7 +7,7 @@ Universal mirroring repository tool.
 ### GitHub > GitLab
 
 ```yml
-name: "Repository Mirror"
+name: "Mirror"
 
 on:
   - push
@@ -19,18 +19,18 @@ jobs:
     steps:
       - uses: pkgstore/github-action-mirror@main
         with:
-          source_repo: "https://github.com/${{ github.repository }}.git"
-          source_user: "${{ secrets.MIRROR_SOURCE_USER_GITHUB }}"
-          source_token: "${{ secrets.MIRROR_SOURCE_TOKEN_GITHUB }}"
-          target_repo: "https://gitlab.com/${{ github.repository }}.git"
-          target_user: "${{ secrets.MIRROR_TARGET_USER_GITLAB }}"
-          target_token: "${{ secrets.MIRROR_TARGET_TOKEN_GITLAB }}"
+          src_repo: "https://github.com/${{ github.repository }}.git"
+          src_user: "${{ secrets.MIRROR_SOURCE_USER_GITHUB }}"
+          src_token: "${{ secrets.MIRROR_SOURCE_TOKEN_GITHUB }}"
+          dst_repo: "https://gitlab.com/${{ github.repository }}.git"
+          dst_user: "${{ secrets.MIRROR_TARGET_USER_GITLAB }}"
+          dst_token: "${{ secrets.MIRROR_TARGET_TOKEN_GITLAB }}"
 ```
 
 ### GitHub > GitHub
 
 ```yml
-name: "Repository Mirror: GitHub"
+name: "Mirror"
 
 on:
   - push
@@ -42,19 +42,19 @@ jobs:
     steps:
       - uses: pkgstore/github-action-mirror@main
         with:
-          source_repo: "https://github.com/${{ github.repository }}.git"
-          source_user: "${{ secrets.MIRROR_SOURCE_USER_GITHUB }}"
-          source_token: "${{ secrets.MIRROR_SOURCE_TOKEN_GITHUB }}"
-          target_repo: "${{ secrets.MIRROR_TARGET_URL_GITHUB }}"
-          target_user: "${{ secrets.MIRROR_TARGET_USER_GITHUB }}"
-          target_token: "${{ secrets.MIRROR_TARGET_TOKEN_GITHUB }}"
+          src_repo: "https://github.com/${{ github.repository }}.git"
+          src_user: "${{ secrets.MIRROR_SOURCE_USER_GITHUB }}"
+          src_token: "${{ secrets.MIRROR_SOURCE_TOKEN_GITHUB }}"
+          dst_repo: "${{ secrets.MIRROR_TARGET_URL_GITHUB }}"
+          dst_user: "${{ secrets.MIRROR_TARGET_USER_GITHUB }}"
+          dst_token: "${{ secrets.MIRROR_TARGET_TOKEN_GITHUB }}"
 ```
 
 ## Legend
 
-- `source_repo` - source repository URL.
-- `source_user` - source user.
-- `source_token` - source token.
-- `target_repo` - target repository URL.
-- `target_user` - target user.
-- `target_token` - target token.
+- `src_repo` - source repository URL.
+- `src_user` - source user.
+- `src_token` - source token.
+- `dst_repo` - target repository URL.
+- `dst_user` - target user.
+- `dst_token` - target token.
