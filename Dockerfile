@@ -2,7 +2,7 @@ FROM alpine
 
 LABEL "name"="Git Repo Mirror"
 LABEL "description"="Universal mirroring repository tool."
-LABEL "maintainer"="Kitsune Solar <kitsune.solar@gmail.com>"
+LABEL "maintainer"="z17 CX <mail@z17.cx>"
 LABEL "repository"="https://github.com/ghastore/mirror.git"
 LABEL "homepage"="https://github.com/ghastore"
 
