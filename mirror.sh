@@ -33,8 +33,8 @@ init() {
 mirror() {
   echo "--- [GIT] CLONE: ${SRC_REPO#https://}"
 
-  SRC="https://${SRC_USER}:${SRC_TOKEN}@${SRC_REPO#https://}"
-  DST="https://${DST_USER}:${DST_TOKEN}@${DST_REPO#https://}"
+  local SRC="https://${SRC_USER}:${SRC_TOKEN}@${SRC_REPO#https://}"
+  local DST="https://${DST_USER}:${DST_TOKEN}@${DST_REPO#https://}"
 
   ${git} clone --mirror "${SRC}" "${d_src}" \
     && _pushd "${d_src}" || exit 1
