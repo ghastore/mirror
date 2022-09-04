@@ -33,12 +33,12 @@ init() {
 mirror() {
   echo "--- [GIT] CLONE: ${SRC_REPO#https://}"
 
-  local SRC="https://${SRC_USER}:${SRC_TOKEN}@${SRC_REPO#https://}"
-  local DST="https://${DST_USER}:${DST_TOKEN}@${DST_REPO#https://}"
+  local src="https://${SRC_USER}:${SRC_TOKEN}@${SRC_REPO#https://}"
+  local dst="https://${DST_USER}:${DST_TOKEN}@${DST_REPO#https://}"
 
-  ${git} clone --mirror "${SRC}" "${d_src}" \
+  ${git} clone --mirror "${src}" "${d_src}" \
     && _pushd "${d_src}" || exit 1
-  ${git} remote add 'dst' "${DST}"
+  ${git} remote add 'dst' "${dst}"
   ${git} push -f --mirror 'dst'
 
   _popd || exit 1
